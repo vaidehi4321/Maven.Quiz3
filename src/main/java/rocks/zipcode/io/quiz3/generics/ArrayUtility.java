@@ -13,18 +13,43 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
+        ArrayUtility<SomeType> utility = new ArrayUtility<>(array);
+
+        for(int i=0;i<array.length;i++) {
+            if (getNumberOfOccurrences(array[i]) % 2 != 0)
+                return array[i];
+        }
+
         return null;
     }
 
     public SomeType findEvenOccurringValue() {
+        ArrayUtility<SomeType> utility = new ArrayUtility<>(array);
+
+        for(int i=0;i<array.length;i++) {
+            if (getNumberOfOccurrences(array[i]) % 2 == 0)
+                return array[i];
+        }
+
         return null;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+        int count = 0;
+        for(int i=0;i < array.length; i++){
+            if(array[i]==(valueToEvaluate))
+            count++;
+        }
+        return count;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
+        ArrayUtility<SomeType> utility = new ArrayUtility<>(array);
+
         return null;
     }
+
+
+
+
 }
