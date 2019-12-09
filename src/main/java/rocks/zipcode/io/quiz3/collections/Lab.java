@@ -5,15 +5,16 @@ package rocks.zipcode.io.quiz3.collections;
  */
 public class Lab {
     String name;
-    String labStatus;
+    LabStatus labStatus;
     public Lab() {
         this(null);
     }
 
     public Lab(String labName)
     {
-
         this.name=labName;
+        this.labStatus=LabStatus.INCOMPLETE;
+
     }
 
     public String getName() {
@@ -21,9 +22,11 @@ public class Lab {
     }
 
     public void setStatus(LabStatus labStatus) {
+
+        this.labStatus=labStatus;
     }
 
     public LabStatus getStatus() {
-        return null;
+        return this.labStatus;
     }
 }

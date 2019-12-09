@@ -9,7 +9,7 @@ import java.util.List;
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
         StringBuilder s= new StringBuilder();
-        for(int i=0;i<indexToCapitalize-1;i++) {
+        for(int i=0;i<indexToCapitalize;i++) {
             s.append(str.charAt(i));
         }
 
@@ -22,14 +22,33 @@ public class StringUtils {
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
-        return null;
+        //if(baseString.charAt(indexOfString)==characterToCheckFor)
+        return (baseString.charAt(indexOfString)==characterToCheckFor);
     }
 
     public static String[] getAllSubStrings(String string) {
-        return null;
+        List<String>al=new ArrayList<>();
+        for(int i=0;i<string.length();i++){
+         for(int j=i+1;j<=string.length();j++){
+
+             al.add(string.substring(i,j));
+         }
+        }
+        for(int i = 0 ;i<al.size()-1; i++){
+            for(int j=i+1;j<al.size();j++){
+                if(al.get(i).equals(al.get(j)))
+                    al.remove(al.get(i));
+
+            }
+        }
+
+        String[]substr=new String[al.size()];
+        al.toArray(substr);
+        return substr;
     }
 
     public static Integer getNumberOfSubStrings(String input){
-        return null;
+        String[] substr=getAllSubStrings(input);
+        return substr.length;
     }
 }

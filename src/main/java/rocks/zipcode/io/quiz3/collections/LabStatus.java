@@ -5,6 +5,7 @@ package rocks.zipcode.io.quiz3.collections;
  * Ensure there are enumerations for, `COMPLETED`, `INCOMPLETE`, `PENDING`
  */
 public enum LabStatus {
-    COMPLETED,INCOMPLETE,PENDING;
-
+    COMPLETED("COMPLETED"),INCOMPLETE("INCOMPLETE"),PENDING("PENDING");
+private String labStatus;
+LabStatus(String labStatus){this.labStatus=labStatus;}
 }
